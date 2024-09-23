@@ -39,7 +39,7 @@
 
 // export default Login;
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 import './login.css'
 const Login = ({setIsLoggedIn}) => {
      const [username, setUsername] = useState('');
@@ -48,7 +48,7 @@ const Login = ({setIsLoggedIn}) => {
    const [passwordError, setPasswordError] = useState('')
  
 
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
   const handleLogin = (e) => {
     e.preventDefault();

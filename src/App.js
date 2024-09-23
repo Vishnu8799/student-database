@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Login from './components/Login';
 import AddStudent from './components/AddStudent';
 import StudentList from './components/StudentList';
 import Attendance from './components/Attendance';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
-import ExamFees from './components/ExanFees';
+import ExamFees from './components/ExamFees';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -19,7 +19,10 @@ const App = () => {
           {isLoggedIn && <Sidebar />}
           <div className="content">
             <Routes>
-              <Route path="/" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
+              <Route
+                path="/"
+                element={isLoggedIn ? <Navigate to="/student-list" /> : <Login setIsLoggedIn={setIsLoggedIn} />}
+              />
               {isLoggedIn && (
                 <>
                   <Route path="/add-student" element={<AddStudent />} />
@@ -31,7 +34,7 @@ const App = () => {
             </Routes>
           </div>
         </div>
-      </div> 
+      </div>
     </Router>
   );
 };
