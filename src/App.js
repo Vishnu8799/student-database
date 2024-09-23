@@ -6,6 +6,7 @@ import StudentList from './components/StudentList';
 import Attendance from './components/Attendance';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
+import ExamFees from './components/ExanFees';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -24,12 +25,13 @@ const App = () => {
                   <Route path="/add-student" element={<AddStudent />} />
                   <Route path="/student-list" element={<StudentList />} />
                   <Route path="/attendance" element={<Attendance />} />
+                  <Route path="/exam-fees" element={<ExamFees />} />
                 </>
               )}
             </Routes>
           </div>
         </div>
-      </div>
+      </div> 
     </Router>
   );
 };
